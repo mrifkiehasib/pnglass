@@ -39,7 +39,7 @@
               cache: 'npm'
           # Langkah 3: Menginstal semua dependensi dari package.json
           - name: Install dependencies
-            run: npm install
+            run: npm ci
           # Langkah 4: Menjalankan proses build Vite
           - name: Build
             run: npm run build
