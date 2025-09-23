@@ -1,0 +1,99 @@
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base font and transition settings */
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* All theme variables are defined within a @layer for better organization with Tailwind */
+@layer base {
+    /* 1. Indigo Theme (Default) */
+    :root, html[data-theme="indigo"] {
+        --color-background: #f8fafc; --color-surface: #ffffff;
+        --color-text: #0f172a; --color-text-secondary: #64748b; --color-border: #e2e8f0;
+        --color-primary-50: #eef2ff; --color-primary-100: #e0e7ff; --color-primary-200: #c7d2fe;
+        --color-primary-300: #a5b4fc; --color-primary-400: #818cf8; --color-primary-500: #6366f1;
+        --color-primary-600: #4f46e5; --color-primary-700: #4338ca; --color-primary-800: #3730a3;
+        --color-primary-900: #312e81;
+    }
+    .dark:root, .dark html[data-theme="indigo"] {
+        --color-background: #0f172a; --color-surface: #1e293b;
+        --color-text: #e2e8f0; --color-text-secondary: #94a3b8; --color-border: #334155;
+    }
+
+    /* 2. Teal Theme */
+    html[data-theme="teal"] {
+        --color-background: #f0fdfa; --color-surface: #ffffff; --color-text: #134e4a;
+        --color-text-secondary: #115e59; --color-border: #ccfbf1;
+        --color-primary-50: #f0fdfa; --color-primary-100: #ccfbf1; --color-primary-200: #99f6e4; --color-primary-300: #5eead4; --color-primary-400: #2dd4bf; --color-primary-500: #14b8a6; --color-primary-600: #0d9488; --color-primary-700: #0f766e; --color-primary-800: #115e59; --color-primary-900: #134e4a;
+    }
+    .dark html[data-theme="teal"] {
+        --color-background: #134e4a; --color-surface: #0f766e; --color-text: #f0fdfa;
+        --color-text-secondary: #ccfbf1; --color-border: #115e59;
+    }
+
+    /* 3. Green Theme */
+    html[data-theme="green"] {
+        --color-background: #f0fdf4; --color-surface: #ffffff; --color-text: #14532d; --color-text-secondary: #166534; --color-border: #dcfce7;
+        --color-primary-50: #f0fdf4; --color-primary-100: #dcfce7; --color-primary-200: #bbf7d0; --color-primary-300: #86efac; --color-primary-400: #4ade80; --color-primary-500: #22c55e; --color-primary-600: #16a34a; --color-primary-700: #15803d; --color-primary-800: #166534; --color-primary-900: #14532d;
+    }
+    .dark html[data-theme="green"] {
+        --color-background: #14532d; --color-surface: #166534; --color-text: #f0fdf4; --color-text-secondary: #dcfce7; --color-border: #15803d;
+    }
+
+    /* 4. Rose Theme */
+    html[data-theme="rose"] {
+        --color-background: #fff1f2; --color-surface: #ffffff; --color-text: #881337; --color-text-secondary: #9f1239; --color-border: #ffe4e6;
+        --color-primary-50: #fff1f2; --color-primary-100: #ffe4e6; --color-primary-200: #fecdd3; --color-primary-300: #fda4af; --color-primary-400: #fb7185; --color-primary-500: #f43f5e; --color-primary-600: #e11d48; --color-primary-700: #be123c; --color-primary-800: #9f1239; --color-primary-900: #881337;
+    }
+    .dark html[data-theme="rose"] {
+        --color-background: #881337; --color-surface: #9f1239; --color-text: #fff1f2; --color-text-secondary: #ffe4e6; --color-border: #be123c;
+    }
+
+    /* 5. Slate Theme */
+    html[data-theme="slate"] {
+        --color-background: #f8fafc; --color-surface: #ffffff; --color-text: #0f172a; --color-text-secondary: #475569; --color-border: #e2e8f0;
+        --color-primary-50: #f8fafc; --color-primary-100: #f1f5f9; --color-primary-200: #e2e8f0; --color-primary-300: #cbd5e1; --color-primary-400: #94a3b8; --color-primary-500: #64748b; --color-primary-600: #475569; --color-primary-700: #334155; --color-primary-800: #1e293b; --color-primary-900: #0f172a;
+    }
+    .dark html[data-theme="slate"] {
+        --color-background: #0f172a; --color-surface: #1e293b; --color-text: #e2e8f0; --color-text-secondary: #94a3b8; --color-border: #334155;
+    }
+
+    /* Apply main theme colors to body */
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+}
+
+/* Style for checkerboard background */
+.checkerboard {
+    background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(135deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(135deg, transparent 75%, #ccc 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 0, 10px -10px, 0px 10px;
+}
+.dark .checkerboard {
+     background-image:
+        linear-gradient(45deg, #4a4a4a 25%, transparent 25%),
+        linear-gradient(135deg, #4a4a4a 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #4a4a4a 75%),
+        linear-gradient(135deg, transparent 75%, #4a4a4a 75%);
+}
+
+/* Simple animation for newly added elements */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+}
+

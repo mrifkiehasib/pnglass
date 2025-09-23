@@ -1,0 +1,14 @@
+{
+  "Ukuran Kertas (300 DPI)": {
+    "A3": { "w": 3508, "h": 4961 },
+    "A4": { "w": 2480, "h": 3508 },
+    "A5": { "w": 1748, "h": 2480 },
+    "Letter": { "w": 2550, "h": 3300 }
+  },
+  "Media Sosial & Digital": {
+    "Instagram Post (1:1)": { "w": 1080, "h": 1080 },
+    "Instagram Story (9:16)": { "w": 1080, "h": 1920 },
+    "Facebook Post": { "w": 1200, "h": 630 },
+    "YouTube Thumbnail": { "w": 1280, "h": 720 }
+  }
+}
