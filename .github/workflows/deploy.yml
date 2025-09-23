@@ -1,0 +1,60 @@
+    # Nama workflow yang akan muncul di tab Actions
+    name: Deploy Vite Project to Pages
+
+    # Pemicu: Kapan workflow ini akan berjalan
+    on:
+      # Berjalan setiap kali ada push ke branch 'main'
+      push:
+        branches: ['main']
+      # Memungkinkan Anda menjalankan workflow ini secara manual dari tab Actions
+      workflow_dispatch:
+
+    # Izin yang dibutuhkan workflow untuk mendeploy ke GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # Pengaturan agar deploy tidak tumpang tindih
+    concurrency:
+      group: 'pages'
+      cancel-in-progress: false
+
+    # Pekerjaan (job) yang akan dilakukan
+    jobs:
+      deploy:
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest # Menjalankan di server Linux virtual
+        steps:
+          # Langkah 1: Mengunduh kode dari repositori Anda
+          - name: Checkout
+            uses: actions/checkout@v4
+          # Langkah 2: Menyiapkan Node.js versi 20
+          - name: Set up Node
+            uses: actions/setup-node@v4
+            with:
+              node-version: 20
+              cache: 'npm'
+          # Langkah 3: Menginstal semua dependensi dari package.json
+          - name: Install dependencies
+            run: npm install
+          # Langkah 4: Menjalankan proses build Vite
+          - name: Build
+            run: npm run build
+          # Langkah 5: Mengkonfigurasi GitHub Pages
+          - name: Setup Pages
+            uses: actions/configure-pages@v5
+          # Langkah 6: Mengunggah hasil build (folder 'dist') sebagai artefak
+          - name: Upload artifact
+            uses: actions/upload-pages-artifact@v3
+            with:
+              path: './dist'
+          # Langkah 7: Mendeploy artefak ke GitHub Pages
+          - name: Deploy to GitHub Pages
+            id: deployment
+            uses: actions/deploy-pages@v4
+    
+
+
