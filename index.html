@@ -10,12 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- PERUBAHAN DI SINI: Menambahkan link ke file CSS utama -->
-    <link rel="stylesheet" href="src/style.css" />
-    <script type="module" src="src/main.js"></script>
+    <!-- PERUBAHAN DI SINI: Menggunakan path relatif './' -->
+    <script type="module" src="./src/main.js"></script>
   </head>
-  <body class="antialiased">
-    <!-- Konten body Anda tetap sama -->
+  <body class="antaliases">
+    <!-- Isi dari body tidak berubah, biarkan seperti apa adanya -->
     <div
       class="bg-[var(--color-surface)]/70 backdrop-blur-sm sticky top-0 z-10 p-2 shadow-md"
     >
@@ -58,7 +57,6 @@
         </button>
       </div>
     </div>
-
     <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
       <header class="text-center mb-8">
         <h1
@@ -70,7 +68,6 @@
           Buat file gambar PNG transparan dengan ukuran kustom secara instan.
         </p>
       </header>
-
       <main>
         <div
           class="bg-[var(--color-surface)] rounded-2xl shadow-xl p-6 transition-colors duration-300"
@@ -109,13 +106,10 @@
               </button>
             </div>
           </div>
-
           <hr
             class="border-[var(--color-border)] my-6 transition-colors duration-300"
           />
-
           <div id="sizes-container" class="space-y-4 mb-6"></div>
-
           <div class="flex flex-col sm:flex-row gap-4 mb-6">
             <button
               id="generate-zip-btn"
@@ -147,7 +141,6 @@
               Unduh Masing-Masing
             </button>
           </div>
-
           <div>
             <h2
               class="text-xl font-semibold mb-4 text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] transition-colors duration-300"
@@ -168,12 +161,10 @@
           </div>
         </div>
       </main>
-
       <footer class="text-center mt-8 text-[var(--color-text-secondary)] text-sm">
         <p>Dibuat oleh Muhammad Rifkie Hasib.</p>
       </footer>
     </div>
-
     <template id="size-input-template">
       <div
         class="size-input-row flex items-center gap-3 p-3 bg-[var(--color-background)] rounded-lg animate-fade-in border border-[var(--color-border)]"
@@ -214,5 +205,3 @@
     </template>
   </body>
 </html>
-
-
