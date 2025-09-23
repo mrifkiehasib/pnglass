@@ -67,7 +67,7 @@ pnglass/
 
 ```bash
 # Clone repositori ini
-git clone https://github.com/USERNAME/pnglass.git
+git clone https://github.com/mrifkiehasib/pnglass.git
 
 # Masuk ke direktori proyek
 cd pnglass
