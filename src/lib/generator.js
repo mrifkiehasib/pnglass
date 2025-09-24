@@ -7,6 +7,7 @@ export function getValidSizes(elements) {
     sizeRows.forEach((row) => {
         const widthInput = row.querySelector('.width-input');
         const heightInput = row.querySelector('.height-input');
+        if (!widthInput || !heightInput) return;
         const width = parseInt(widthInput.value, 10);
         const height = parseInt(heightInput.value, 10);
         [widthInput, heightInput].forEach(input => input.classList.remove('border-red-500', 'ring-red-500'));

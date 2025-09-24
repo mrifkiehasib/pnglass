@@ -55,14 +55,14 @@ const addSizeRow = (elements, width = '', height = '') => {
     row.className = 'size-input-row flex items-center gap-3 p-3 bg-[var(--color-background)] rounded-lg animate-fade-in border border-[var(--color-border)]';
     row.innerHTML = `
         <div class="flex-1">
-            <input type="number" min="1" placeholder="Lebar (px)" class="width-input w-full px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-md focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-[var(--color-primary-500)] outline-none transition" value="${width}">
+            <input class="width-input w-full px-3 py-2 rounded-md border focus:border-[var(--color-primary-500)] outline-none transition" type="number" min="1" placeholder="Lebar (px)" value="${width}">
         </div>
         <div class="text-[var(--color-text-secondary)]">&times;</div>
         <div class="flex-1">
-            <input type="number" min="1" placeholder="Tinggi (px)" class="height-input w-full px-3 py-2 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-md focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-[var(--color-primary-500)] outline-none transition" value="${height}">
+            <input class="height-input w-full px-3 py-2 rounded-md border focus:border-[var(--color-primary-500)] outline-none transition" type="number" min="1" placeholder="Tinggi (px)" value="${height}">
         </div>
-        <button class="remove-size-btn text-[var(--color-text-secondary)] hover:text-red-500 dark:hover:text-red-400 transition-colors p-2 rounded-full flex-shrink-0">
-            <svg class="h-5 w-5 pointer-events-none" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd"></path></svg>
+        <button class="remove-size-btn text-[var(--color-text-secondary)] hover:text-red-400 transition-colors p-2 rounded-full flex-shrink-0">
+            <svg class="h-5 w-5 pointer-events-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 011-1h6a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </button>
     `;
     elements.sizesContainer.appendChild(row);
